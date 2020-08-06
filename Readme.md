@@ -1,3 +1,5 @@
+# Inkscape as of `1.0 (4035a4fb49, 2020-05-01)` saves the links in exported PDFs. This means that svglinkify is no longer needed.
+
 ```
 svglinkify converts SVGs to PDFs using inkscape while preserving hyperlinks
 applied to objects. To use, first create an SVG file in inkscape. Create
