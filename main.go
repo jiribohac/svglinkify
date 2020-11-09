@@ -481,7 +481,13 @@ func main() {
 	anchorMatches := anchorRegexp.FindAllStringSubmatch(svgContent, -1)
 
 	for _, a := range anchorMatches {
-		l := PositionedLink{URL: a[1]}
+		url := a[1]
+		url = strings.Replace(url, "&amp;", "&", -1)
+		url = strings.Replace(url, "&lt;", "<", -1)
+		url = strings.Replace(url, "&gt;", ">", -1)
+
+
+		l := PositionedLink{URL: url}
 		idm := anchorIdRegexp.FindStringSubmatch(a[0])
 		if idm == nil {
 			continue
